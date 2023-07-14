@@ -1,0 +1,253 @@
+<template>
+    <div class="">
+
+
+
+      <div class="flex items-center justify-center">
+        <div> <!-- Replace bg-gray-200 and p-4 with your desired styles -->
+            <img src="../../assets/images/logo.png" class="w-32 ">
+        </div>
+      </div>
+      <div class="px-4 py-3 sm:px-6 flex justify-center">
+          <button type="button" class="mt-3 mr-3 flex justify-center align-items-center h-10 bg-cover bg-center rounded-full border border-transparent bg-purple-500 px-5 py-2 text-base text-white shadow-sm hover:cursor-pointer hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAYAAAB65WHVAAAACXBIWXMAACxLAAAsSwGlPZapAAAE9GlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4wLWMwMDAgNzkuZGE0YTdlNWVmLCAyMDIyLzExLzIyLTEzOjUwOjA3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjMtMDItMDdUMTY6Mzg6NDAtMDg6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTAyLTA3VDE3OjM0OjI0LTA4OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTAyLTA3VDE3OjM0OjI0LTA4OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxYmUzYWQ1YS04MDM2LTRmNjQtOGQwOS03YWQ3OWU3MjYyZmEiIHhtcE1NOkRvY3VtZW50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&quot;); background-size: 45px;"></button>
+        <button type="button" class="mt-3 mr-3 flex align-items-center h-10 bg-center rounded-full border border-transparent bg-purple-500 px-5 py-2 text-base text-white shadow-sm hover:bg-purple-700 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" style="background-image: url(&quot;data:image/png;base64,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&quot;); background-size: 25px; background-repeat: no-repeat;"></button>
+        <button type="button" class="mt-3 mr-3 flex align-items-center h-10 bg-center rounded-full border border-transparent bg-purple-500 px-5 py-2 text-base text-white shadow-sm hover:bg-purple-700 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" style="background-image: url('../src/assets/images/twitter_logo.png'); background-size: 25px; background-repeat: no-repeat;"></button>
+        <button type="button" class="mt-3 mr-3 flex align-items-center h-10 bg-center rounded-full border border-transparent bg-purple-500 px-5 py-2 text-base text-white shadow-sm hover:bg-purple-700 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" style="background-image: url('../src/assets/images/instagram_logo.png'); background-size: 25px; background-repeat: no-repeat;"></button>
+        <button type="button" class="mt-3 mr-3 flex align-items-center h-10 bg-center rounded-full border border-transparent bg-purple-500 px-5 py-2 text-base text-white shadow-sm hover:bg-purple-700 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" style="background-image: url('../src/assets/images/cart.png'); background-size: 26px; background-repeat: no-repeat;"></button>
+      </diV>
+
+    
+      <div class="flex items center justify-center">
+        <div class=" w-80 h-80 bg-red-600" id="bearBuilder">
+        <div class=" w-full h-full" id="backgroundBuilderCanvas"></div>  
+        <div class=" w-full h-full" id="speciesBuilderCanvas"></div>  
+        <div class=" w-full h-full" id="faceBuilderCanvas"></div>  
+        <div class=" w-full h-full" id="clothesBuilderCanvas"></div>  
+        <div class=" w-full h-full" id="facialhairBuilderCanvas"></div>  
+        <div class=" w-full h-full" id="facewearBuilderCanvas" ></div>  
+        <div class=" w-full h-full" id="headwearBuilderCanvas" ></div>  
+        <div class=" w-full h-full" id="cigarpipeBuilderCanvas"></div>  
+      </div>
+      </div>
+      <div class="flex items center justify-center">
+        <div>
+
+
+
+<div class="border-b border-gray-200 dark:border-gray-700">
+  <nav class="flex space-x-2" aria-label="Tabs" role="tablist">
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 active" id="backgroundsBuilderTab" data-hs-tab="#tabs-with-icons-1" aria-controls="tabs-with-icons-1" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+      </svg>
+      Background
+    </button>
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600" id="speciesBuilder" data-hs-tab="#tabs-with-icons-2" aria-controls="tabs-with-icons-2" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>
+      Species
+    </button>
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600" id="facesBuiilder" data-hs-tab="#tabs-with-icons-3" aria-controls="tabs-with-icons-3" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </svg>
+      Face
+    </button>
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600" id="facesBuiilder" data-hs-tab="#tabs-with-icons-3" aria-controls="tabs-with-icons-3" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </svg>
+      Clothes
+    </button>
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600" id="facesBuiilder" data-hs-tab="#tabs-with-icons-3" aria-controls="tabs-with-icons-3" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </svg>
+      Facial Hair
+    </button>
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600" id="facesBuiilder" data-hs-tab="#tabs-with-icons-3" aria-controls="tabs-with-icons-3" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </svg>
+      Facewear
+    </button>
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600" id="facesBuiilder" data-hs-tab="#tabs-with-icons-3" aria-controls="tabs-with-icons-3" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </svg>
+      Headwear
+    </button>
+    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600" id="facesBuiilder" data-hs-tab="#tabs-with-icons-3" aria-controls="tabs-with-icons-3" role="tab">
+      <svg class="hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 w-3.5 h-3.5 text-gray-400 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </svg>
+      Cigar/pipe
+    </button>
+  </nav>
+</div>
+
+<div class="mt-3">
+  <div id="tabs-with-icons-1" role="tabpanel" aria-labelledby="backgroundsBuilderTab">
+    <div class="content">
+            <div class="carousel">
+              <img src="../../assets/images/traits/background/01.png" class="product-image" alt="">
+              <img src="../../assets/images/traits/background/02.png" class="product-image" alt="">
+              <img src="../../assets/images/traits/background/03.png" class="product-image" alt="">
+              <img src="../../assets/images/traits/background/04.png" class="product-image" alt="">
+              <img src="../../assets/images/traits/background/05.png" class="product-image" alt="">
+            </div>
+          </div>
+
+  </div>
+  <div id="tabs-with-icons-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-2">
+    <p class="text-gray-500 dark:text-gray-400">
+      This is the <em class="font-semibold text-gray-800 dark:text-gray-200">second</em> item's tab body.
+    </p>
+  </div>
+  <div id="tabs-with-icons-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-3">
+    <p class="text-gray-500 dark:text-gray-400">
+      This is the <em class="font-semibold text-gray-800 dark:text-gray-200">third</em> item's tab body.
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+   
+   </div>
+</template>
+
+<style>
+.carousel img{
+  width: 75px !important;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: absolute;
+  top: 40%;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.right {
+  right: -20%;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  left: -20%;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.arrow:hover {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+}
+
+.arrow:active {
+  scale: .8;
+}
+
+
+
+.previous-button {
+  position: absolute;
+  left: -50px;
+  top: 50px;
+}
+
+.slick-slide:not(:last-of-type) {
+  margin-right: var(--tile-margin);
+}
+
+.next-button {
+  position: absolute;
+  right: -50px;
+  top: 60px;
+}
+
+.carousel {
+  position: relative;
+  width: calc(100% - 100px);
+  max-width: 300px;
+
+}
+
+
+.slick-current {
+  scale: 1.2;
+}
+</style>
+<script>
+import $ from 'jquery';
+import 'slick-carousel';
+
+export default {
+  data() {
+    return {
+      date: new Date(),
+      arrowClicked: '',
+      arrowClickedTrait: '',
+    }
+  },
+  methods: {
+    setListeners: function() {
+
+    },
+    loadAllCarousels: function() {
+      $('.carousel').slick({
+        initialSlide: 0,
+        centerMode: true,
+        slidesToShow: 1,
+        prevArrow: `<i class="arrow left" data-trait="cigarPipe"></i>`,
+        nextArrow: `<i class="arrow right" data-trait="cigarPipe"></i>`,
+        responsive: [
+          {
+            breakpoint: 575,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 375,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+
+    }
+  },
+  mounted() {
+    this.setListeners();
+    this.loadAllCarousels();
+  }
+}
+
+</script>
+

@@ -1,0 +1,249 @@
+<template>
+  <div class="flex items-center justify-center">
+    <!-- TRAITS PICKER LEFT -->
+    <div class="traitsPickerRight">
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('background')">
+          <span>Prev</span>
+        </div>
+        <span class="cursor-pointer" @click="removeTrait('background')">Background</span>
+        <div class="arrow arrow--right" @click="nextColor('background')">
+          <span>Next</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('species')">
+          <span>Prev</span>
+        </div>
+        <span class="cursor-pointer" @click="removeTrait('species')">Species</span>
+        <div class="arrow arrow--right" @click="nextColor('species')">
+          <span>Next</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('face')">
+          <span>Prev</span>
+        </div>
+        <span class="cursor-pointer" @click="removeTrait('face')" >Face</span>
+        <div class="arrow arrow--right" @click="nextColor('face')">
+          <span>Next</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('facialhair')">
+          <span>Prev</span>
+        </div>
+        <span class="cursor-pointer" @click="removeTrait('facialhair')" >Facial Hair</span>
+        <div class="arrow arrow--right" @click="nextColor('facialhair')">
+          <span>Next</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-80 h-80 relative" id="bearBuilder">
+      <div class="absolute left-0 w-full h-full z-10" id="backgroundBuilderCanvas"></div>
+      <div class="absolute left-0 w-full h-full z-11" id="speciesBuilderCanvas"></div>
+      <div class="absolute left-0 w-full h-full z-12" id="faceBuilderCanvas"></div>
+      <div class="absolute left-0 w-full h-full z-13" id="clothesBuilderCanvas"></div>
+      <div class="absolute left-0 w-full h-full z-14" id="facialhairBuilderCanvas"></div>
+      <div class="absolute left-0 w-full h-full z-15" id="facewearBuilderCanvas"></div>
+      <div class="absolute left-0 w-full h-full z-16" id="headwearBuilderCanvas"></div>
+      <div class="absolute left-0 w-full h-full z-17" id="cigarpipeBuilderCanvas"></div>
+    </div>
+
+    <!-- TRAITS PICKER RIGHT -->
+    <div class="traitsPickerRight grid grid-flow-row gap-4 row">
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('clothes')">
+          <span>Prev</span>
+        </div>
+        <div class="relative group">
+          <span class="cursor-pointer" @click="removeTrait('clothes')">Clothes</span>
+        <div class="absolute top-[-10px] left-0 bg-red-200 p-2 text-sm text-gray-800 rounded mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+          Message
+        </div>
+        </div>
+        <div class="arrow arrow--right" @click="nextColor('clothes')">
+          <span>Next</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('headwear')">
+          <span>Prev</span>
+        </div>
+        <span class="cursor-pointer" @click="removeTrait('headwear')">Headwear</span>
+        <div class="arrow arrow--right" @click="nextColor('headwear')">
+          <span>Next</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('facewear')">
+          <span>Prev</span>
+        </div>
+        <span class="cursor-pointer" @click="removeTrait('facewear')">Facewear</span>
+        <div class="arrow arrow--right" @click="nextColor('facewear')">
+          <span>Next</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 items-center justify-center text-center">
+        <div class="arrow arrow--left" @click="prevColor('cigarpipe')">
+          <span>Prev</span>
+        </div>
+        <span class="cursor-pointer" @click="removeTrait('cigarpipe')">Cigar/Pipe</span>
+        <div class="arrow arrow--right" @click="nextColor('cigarpipe')">
+          <span>Next</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+</template>
+
+<script>
+import $ from 'jquery';
+import allImagesSVG from '../../assets/allConvertedSVG';
+
+export default {
+  data() {
+    return {
+      date: new Date(),
+      allImagesSVG: allImagesSVG,
+      traits: allImagesSVG.allImagesSVG.traits,
+      currentIndex: {
+        background: "1",
+        species: "1",
+        face: "1",
+        facialhair: "1",
+        clothes: "1",
+        headwear: "1",
+        facewear: "1",
+        cigarpipe: "1",
+      }
+    }
+  },
+  methods: {
+    setListeners: function () {
+
+    },
+    prevColor(trait) {
+      const currentIndex = this.currentIndex[trait];
+      const traitLength = Object.keys(this.traits[trait]).length;
+
+      if (currentIndex > 1) {
+        this.currentIndex[trait] = String(parseInt(currentIndex) - 1);
+      } else {
+        this.currentIndex[trait] = String(traitLength);
+      }
+
+      const traitCanvas = document.getElementById(trait + 'BuilderCanvas');
+            traitCanvas.style.backgroundImage = `url('../src/assets/images/traits/${trait}/${this.traits[trait][this.currentIndex[trait]]}.png')`;
+            traitCanvas.style.backgroundSize = 'cover';
+    },
+    nextColor(trait) {
+      const currentIndex = this.currentIndex[trait];
+      const traitLength = Object.keys(this.traits[trait]).length;
+
+      if (currentIndex < traitLength) {
+        this.currentIndex[trait] = String(parseInt(currentIndex) + 1);
+      } else {
+        this.currentIndex[trait] = "1";
+      }
+
+      const traitCanvas = document.getElementById(trait + 'BuilderCanvas');
+            traitCanvas.style.backgroundImage = `url('../src/assets/images/traits/${trait}/${this.traits[trait][this.currentIndex[trait]]}.png')`;
+            traitCanvas.style.backgroundSize = 'cover';
+    },
+    removeTrait: function(trait){
+      const traitCanvas = document.getElementById(trait + 'BuilderCanvas');
+      traitCanvas.style.backgroundImage = '';
+    }
+
+  },
+  mounted() {
+    this.setListeners();
+  }
+}
+
+</script>
+
+
+<style>
+.arrow:active{
+  color:blue
+}
+
+.arrow {
+  --size: 10px;
+  --width: 2px;
+  color: red;
+  cursor: pointer;
+  display: block;
+  align-items: flex-start;
+  text-transform: uppercase;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.arrow span {
+  display: block;
+  width: 1px;
+  opacity: 0;
+  transition: opacity 0.3s 0s;
+  padding: 0 0.5em;
+  font-size: 10px;
+  margin: 0;
+}
+
+.arrow:hover span {
+  opacity: 1;
+  transition: opacity 0.3s 0.1s;
+}
+
+ .arrow:before {
+  content: '';
+  display: block;
+  border: solid black;
+  border-width: var(--width) var(--width) 0 0;
+  position: absolute;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+}
+
+.arrow.arrow--left span{
+  left: 55%;
+    position: relative;
+}
+ .arrow.arrow--left:before {
+  transform: rotate(-135deg);
+  right: 0;
+  transition: right 0.3s 0.2s;
+}
+
+.arrow.arrow--left:hover:before {
+  right: 40%;
+  transition: right 0.3s;
+  border-color: red;
+}
+
+.arrow.arrow--right {
+  text-align: right;
+}
+
+ .arrow.arrow--right:before {
+  left: 0;
+  transform: rotate(45deg);
+  transition: left 0.3s 0.2s;
+}
+
+.arrow.arrow--right:hover:before {
+  left: 40%;
+  transition: left 0.3s;
+  border-color: red;
+
+}
+
+.arrow:hover {
+  transform: none;
+}
+</style>
