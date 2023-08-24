@@ -172,30 +172,30 @@ export default {
  
             
         if (this.headwearUnder.includes(this.currentIndex[this.currentTrait])) {
-          this.headwearunderCanvas.style.backgroundImage = `url('../src/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+          this.headwearunderCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
           this.headwearunderCanvas.style.backgroundSize = 'cover';
         }
         if(this.currentIndex[this.currentTrait] == 16 ||
             this.currentIndex[this.currentTrait] == 17 ||
             this.currentIndex[this.currentTrait] == 18 ||
             this.currentIndex[this.currentTrait] == 23){
-              this.headwearunderCanvas.style.backgroundImage = `url('../src/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}c.png')`;
-            traitCanvas.style.backgroundImage = `url('../src/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+              this.headwearunderCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}c.png')`;
+            traitCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
             traitCanvas.style.backgroundSize = 'cover';
         }else{
-          traitCanvas.style.backgroundImage = `url('../src/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+          traitCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
           traitCanvas.style.backgroundSize = 'cover';
         }  
       }
       if (this.currentTrait === 'face' && this.notebookHead && this.currentIndex[this.currentTrait] >= 66 && this.currentIndex[this.currentTrait] <= 68){
-        this.screenfacesCanvas.style.backgroundImage = `url('../src/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+        this.screenfacesCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
         this.screenfacesCanvas.style.backgroundSize = 'cover';
       }else{
         if(!this.notebookHead){
           this.screenfacesCanvas.style.backgroundImage = 'none'
         }
 
-        traitCanvas.style.backgroundImage = `url('../src/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+        traitCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
         traitCanvas.style.backgroundSize = 'cover';
       } 
     },
@@ -243,7 +243,7 @@ export default {
         backgroundTrait = '01.png'
       }
       const traitCanvas = document.getElementById('backgroundBuilderCanvas');
-      traitCanvas.style.backgroundImage = `url('../src/assets/images/traits/background/${backgroundTrait}')`;
+      traitCanvas.style.backgroundImage = `url('../../assets/images/traits/background/${backgroundTrait}')`;
       traitCanvas.style.backgroundSize = 'cover';
     },
     drawImagesToCanvas() {
@@ -308,13 +308,13 @@ export default {
   background-position: center;
 }
 #backgroundBuilderCanvas{
-  background-image: url(../src/assets/images/traits/background/02.png);
+  background-image: url("../../assets/images/traits/background/02.png");
   background-position: center;
   background-size: cover;
 }
 
 #speciesBuilderCanvas{
-  background-image: url(../src/assets/images/traits/species/01.png);
+  background-image: url(../../assets/images/traits/species/01.png);
   background-position: center;
   background-size: cover;
 }
