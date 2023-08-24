@@ -41,14 +41,14 @@
           <div class="builderPreview">
             <div class="relative" id="bearBuilder">
               <div class="absolute left-0 w-full h-full  itsTrait" id="backgroundBuilderCanvas"></div>
-              <div class="absolute left-0 w-full h-full itsTrait" id="speciesBuilderCanvas"></div>
-              <div class="absolute left-0 w-full h-full  itsTrait"  id="faceBuilderCanvas"></div>
+              <div class="absolute left-0 w-full h-full  itsTrait" id="speciesBuilderCanvas"></div>
+              <div class="absolute left-0 w-full h-full  itsTrait" id="faceBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="headwearUnderBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="clothesBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="facialhairBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="facewearBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="headwearBuilderCanvas"></div>
-              <div class="absolute left-0 w-full h-full  itsTrait " id="screenfacesBuilderCanvas"></div>
+              <div class="absolute left-0 w-full h-full  itsTrait" id="screenfacesBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="cigarpipeBuilderCanvas"></div>
             </div>
             <canvas style="display: none;" :width="canvasWidth" :height="canvasHeight" class="bearCanvas" ref="bearCanvas" ></canvas>
@@ -197,10 +197,14 @@ export default {
         traitCanvas.style.backgroundSize = 'cover';
       } 
     },
-    removeTrait: function () {
+    removeTrait() {
       if (this.currentTrait !== 'species'){
+        if(this.currentTrait === 'headwear'){
+          this.headwearunderCanvas.style.backgroundImage = ''
+        }
+       
         const traitCanvas = document.getElementById(this.currentTrait + 'BuilderCanvas');
-        traitCanvas.style.backgroundImage = '';
+        traitCanvas.style.backgroundImage = 'none';
       }
       this.newUpdate = new Date();
     }, 
