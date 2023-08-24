@@ -8,7 +8,7 @@ import vue from '@vitejs/plugin-vue';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-
+  base: '/BuildYourBear/',
   alias: {
     '/@': path.resolve(__dirname, './src')
   },
