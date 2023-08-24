@@ -32,7 +32,7 @@
    <a href="https://merch.bearsdeluxe.io/" target="_blank">
       <button type="button"
       class="menuIcon mt-3 mr-3 flex align-items-center h-10 bg-center rounded-full border border-transparent bg-[#FD904C] px-5 py-2 text-base text-white shadow-sm hover:bg-[#dd6e28] hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-      style="background-image: url('/images/cart.png'); background-size: 26px; background-repeat: no-repeat;"></button>
+      style="background-image: url('/../images/cart.png'); background-size: 26px; background-repeat: no-repeat;"></button>
   </a>
   </div>
   <div class="px-4 py-3 sm:px-6 flex justify-center">
