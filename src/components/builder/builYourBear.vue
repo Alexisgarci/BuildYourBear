@@ -202,6 +202,7 @@ export default {
         const traitCanvas = document.getElementById(this.currentTrait + 'BuilderCanvas');
         traitCanvas.style.backgroundImage = '';
       }
+      this.newUpdate = new Date();
     }, 
     checkTraitToRemove(arg){
       if (arg === 'enter' && this.currentTrait === 'species'){
