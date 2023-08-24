@@ -170,30 +170,30 @@ export default {
  
             
         if (this.headwearUnder.includes(this.currentIndex[this.currentTrait])) {
-          this.headwearunderCanvas.style.backgroundImage = `url('/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+          this.headwearunderCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
           this.headwearunderCanvas.style.backgroundSize = 'cover';
         }
         if(this.currentIndex[this.currentTrait] == 16 ||
             this.currentIndex[this.currentTrait] == 17 ||
             this.currentIndex[this.currentTrait] == 18 ||
             this.currentIndex[this.currentTrait] == 23){
-              this.headwearunderCanvas.style.backgroundImage = `url('/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}c.png')`;
-            traitCanvas.style.backgroundImage = `url('/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+              this.headwearunderCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}c.png')`;
+            traitCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
             traitCanvas.style.backgroundSize = 'cover';
         }else{
-          traitCanvas.style.backgroundImage = `url('/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+          traitCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
           traitCanvas.style.backgroundSize = 'cover';
         }  
       }
       if (this.currentTrait === 'face' && this.notebookHead && this.currentIndex[this.currentTrait] >= 66 && this.currentIndex[this.currentTrait] <= 68){
-        this.screenfacesCanvas.style.backgroundImage = `url('/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+        this.screenfacesCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
         this.screenfacesCanvas.style.backgroundSize = 'cover';
       }else{
         if(!this.notebookHead){
           this.screenfacesCanvas.style.backgroundImage = 'none'
         }
 
-        traitCanvas.style.backgroundImage = `url('/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+        traitCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
         traitCanvas.style.backgroundSize = 'cover';
       } 
     },
@@ -241,7 +241,7 @@ export default {
         backgroundTrait = '01.png'
       }
       const traitCanvas = document.getElementById('backgroundBuilderCanvas');
-      traitCanvas.style.backgroundImage = `url('/images/traits/background/${backgroundTrait}')`;
+      traitCanvas.style.backgroundImage = `url('images/traits/background/${backgroundTrait}')`;
       traitCanvas.style.backgroundSize = 'cover';
     },
     drawImagesToCanvas() {
@@ -306,13 +306,13 @@ export default {
   background-position: center;
 }
 #backgroundBuilderCanvas{
-  background-image: url("/images/traits/background/02.png");
+  background-image: url("images/traits/background/02.png");
   background-position: center;
   background-size: cover;
 }
 
 #speciesBuilderCanvas{
-  background-image: url(/images/traits/species/01.png);
+  background-image: url(images/traits/species/01.png);
   background-position: center;
   background-size: cover;
 }
@@ -356,7 +356,7 @@ body{
   background-color: #0CC0DF;
 }
 #speciesSelector{
-    background-image: url(/images/traits/species/02.png);
+    background-image: url(images/traits/species/02.png);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
@@ -365,37 +365,37 @@ body{
 }
 
 #faceSelector{
-  background-image: url(/images/traits/face/01.png);
+  background-image: url(images/traits/face/01.png);
     background-position: center;
     background-position-y: -7px;
     background-position-x: 3px;
 }
 #clothesSelector{
-  background-image: url(/images/traits/clothes/02.png);
+  background-image: url(images/traits/clothes/02.png);
   background-position: center;
     background-position-y: -27px;
     background-position-x: 2px;
 }
 #facialhairSelector{
-  background-image: url(/images/traits/facialhair/05.png);
+  background-image: url(images/traits/facialhair/05.png);
   background-position: center;
     background-position-y: -9px;
     background-position-x: 4px;
 }
 #facewearSelector{
-  background-image: url(/images/traits/facewear/01.png);
+  background-image: url(images/traits/facewear/01.png);
   background-position: center;
     background-position-y: 0px;
     background-position-x: 3px;
 }
 #headwearSelector{
-  background-image: url(/images/traits/headwear/20.png);
+  background-image: url(images/traits/headwear/20.png);
   background-position: center;
     background-position-y: 14px;
     background-position-x: 4px;
 }
 #cigarpipeSelector{
-  background-image: url(/images/traits/cigarpipe/02.png);
+  background-image: url(images/traits/cigarpipe/02.png);
   background-position: center;
     background-position-y: -13px;
     background-position-x: 21px;
@@ -441,7 +441,7 @@ border:solid 4px #333333;
 border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   color: darkblue;
   align-items: center;
-  background-image: url(/images/frame1.svg);
+  background-image: url(images/frame1.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -512,7 +512,7 @@ border-radius:15px 225px 15px 255px/255px 15px 225px 15px;
   text-align: center;
   align-items: center;
   font-size: 3rem;
-  background-image: url(/images/delete.svg);
+  background-image: url(images/delete.svg);
   background-position: center;
   background-size: 50px;
   background-repeat: no-repeat;
