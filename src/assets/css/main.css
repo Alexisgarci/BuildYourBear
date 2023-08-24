@@ -3,3 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'cartoon';
+    src: url('../fonts/cartoon.otf') format('truetype'); 
+  }
+  html {
+    font-family: 'cartoon', sans-serif;
+    font-size: 1.2rem;
+  }
+  body{
+    background-color: #22529E;
+    background-image: url(../images/startsbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .textShadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
