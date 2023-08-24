@@ -1,19 +1,18 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath } from 'node:url';
+import path from 'node:path'; // Import the path module here
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 
-// https://vitejs.dev/config/
+// Get the directory name of the current module
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 export default defineConfig({
   base: '/BuildYourBear/',
+  alias: {
+    '/@': path.resolve(__dirname, './src')
+  },
   plugins: [
     vue(),
-    
   ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      jquery: 'jquery/dist/jquery.min.js'
-    }
-  }
-})
+});

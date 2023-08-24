@@ -69,9 +69,7 @@
 
 
 <script>
-import $ from 'jquery';
 import allImagesSVG from '../../assets/allConvertedSVG';
-import hexaColors from '../../assets/hexaColors';
 
 export default {
   data() {
@@ -172,15 +170,15 @@ export default {
  
             
         if (this.headwearUnder.includes(this.currentIndex[this.currentTrait])) {
-          this.headwearunderCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+          this.headwearunderCanvas.style.backgroundImage = `url('@/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
           this.headwearunderCanvas.style.backgroundSize = 'cover';
         }
         if(this.currentIndex[this.currentTrait] == 16 ||
             this.currentIndex[this.currentTrait] == 17 ||
             this.currentIndex[this.currentTrait] == 18 ||
             this.currentIndex[this.currentTrait] == 23){
-              this.headwearunderCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}c.png')`;
-            traitCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
+              this.headwearunderCanvas.style.backgroundImage = `url('@/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}c.png')`;
+            traitCanvas.style.backgroundImage = `url('@/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
             traitCanvas.style.backgroundSize = 'cover';
         }else{
           traitCanvas.style.backgroundImage = `url('../../assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
