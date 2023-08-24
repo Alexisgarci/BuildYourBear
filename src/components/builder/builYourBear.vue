@@ -306,13 +306,13 @@ export default {
   background-position: center;
 }
 #backgroundBuilderCanvas{
-  background-image: url("images/traits/background/02.png");
+  background-image: url("/images/traits/background/02.png");
   background-position: center;
   background-size: cover;
 }
 
 #speciesBuilderCanvas{
-  background-image: url(images/traits/species/01.png);
+  background-image: url(/images/traits/species/01.png);
   background-position: center;
   background-size: cover;
 }
@@ -356,7 +356,7 @@ body{
   background-color: #0CC0DF;
 }
 #speciesSelector{
-    background-image: url(images/traits/species/02.png);
+    background-image: url(/images/traits/species/02.png);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
@@ -365,37 +365,37 @@ body{
 }
 
 #faceSelector{
-  background-image: url(images/traits/face/01.png);
+  background-image: url(/images/traits/face/01.png);
     background-position: center;
     background-position-y: -7px;
     background-position-x: 3px;
 }
 #clothesSelector{
-  background-image: url(images/traits/clothes/02.png);
+  background-image: url(/images/traits/clothes/02.png);
   background-position: center;
     background-position-y: -27px;
     background-position-x: 2px;
 }
 #facialhairSelector{
-  background-image: url(images/traits/facialhair/05.png);
+  background-image: url(/images/traits/facialhair/05.png);
   background-position: center;
     background-position-y: -9px;
     background-position-x: 4px;
 }
 #facewearSelector{
-  background-image: url(images/traits/facewear/01.png);
+  background-image: url(/images/traits/facewear/01.png);
   background-position: center;
     background-position-y: 0px;
     background-position-x: 3px;
 }
 #headwearSelector{
-  background-image: url(images/traits/headwear/20.png);
+  background-image: url(/images/traits/headwear/20.png);
   background-position: center;
     background-position-y: 14px;
     background-position-x: 4px;
 }
 #cigarpipeSelector{
-  background-image: url(images/traits/cigarpipe/02.png);
+  background-image: url(/images/traits/cigarpipe/02.png);
   background-position: center;
     background-position-y: -13px;
     background-position-x: 21px;
@@ -441,7 +441,7 @@ border:solid 4px #333333;
 border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   color: darkblue;
   align-items: center;
-  background-image: url(images/frame1.svg);
+  background-image: url('/images/frame1.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -512,7 +512,7 @@ border-radius:15px 225px 15px 255px/255px 15px 225px 15px;
   text-align: center;
   align-items: center;
   font-size: 3rem;
-  background-image: url(images/delete.svg);
+  background-image: url(/images/delete.svg);
   background-position: center;
   background-size: 50px;
   background-repeat: no-repeat;
