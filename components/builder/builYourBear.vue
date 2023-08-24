@@ -155,8 +155,8 @@ export default {
     applyTraits(){
       this.newUpdate = new Date();
       const traitCanvas = document.getElementById(this.currentTrait + 'BuilderCanvas');
-      traitCanvas.style.backgroundImage = 'none';
-      this.headwearunderCanvas.style.backgroundImage = 'none';
+      traitCanvas.style.backgroundImage = '';
+      this.headwearunderCanvas.style.backgroundImage = '';
       
       if(this.currentTrait === 'species'){
         this.setBackgroundTrait()
@@ -166,7 +166,7 @@ export default {
           this.notebookHead = true  
         }
         if (this.currentIndex[this.currentTrait] < 32){
-          this.screenfacesCanvas.style.backgroundImage = 'none'
+          this.screenfacesCanvas.style.backgroundImage = ''
           this.notebookHead = false
         }
  
@@ -192,7 +192,7 @@ export default {
         this.screenfacesCanvas.style.backgroundSize = 'cover';
       }else{
         if(!this.notebookHead){
-          this.screenfacesCanvas.style.backgroundImage = 'none'
+          this.screenfacesCanvas.style.backgroundImage = ''
         }
 
         traitCanvas.style.backgroundImage = `url('../src/assets/images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
