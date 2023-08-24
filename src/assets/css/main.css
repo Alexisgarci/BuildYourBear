@@ -13,7 +13,7 @@
   }
   body{
     background-color: #22529E;
-    background-image: url(../images/startsbg.jpg);
+    background-image: url(/images/startsbg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
