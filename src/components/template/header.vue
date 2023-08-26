@@ -35,7 +35,7 @@
       style="background-image: url('images/cart.png'); background-size: 26px; background-repeat: no-repeat;"></button>
   </a>
   </div>
-  <div class="px-4 py-3 sm:px-6 flex justify-center">
+  <div class="px-4 py-2 sm:px-6 flex justify-center">
       </diV>
 </template>
 
@@ -53,15 +53,18 @@ export default {
 
 <style>
 .bearLogo{
-  margin-top: 40px;
+  margin-top: 20px;
   width: 400px
 }
 .menuIcon{
-  margin-top: 190px;
+position: relative;
+top: 70px;
 }
 .bearsHomeLogo{
-  margin-top: 199px;
+  position: relative;
   width: 60px;
   height: 60px;
+  top: 85px;
+  margin-right: 5px;
 }
 </style>
