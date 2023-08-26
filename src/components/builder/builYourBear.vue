@@ -23,15 +23,17 @@
             </div>
         </div>
           <div class="traitsSelection">
-            <div @click="setCurrentTrait" class="traitSelector pointer highlightedSelector" id="speciesSelector" data-trait="species" data-traitName="Specie"></div>
+            <div @click="setCurrentTrait" class="traitSelector pointer highlightedSelector" id="speciesSelector" data-trait="species" data-traitName="Species"></div>
             <div @click="setCurrentTrait" class="traitSelector pointer" id="faceSelector" data-trait="face" data-traitName="Face"></div>
             <div @click="setCurrentTrait" class="traitSelector pointer" id="clothesSelector" data-trait="clothes" data-traitName="Clothes"></div>
             <div @click="setCurrentTrait" class="traitSelector pointer"  id="facialhairSelector" data-trait="facialhair" data-traitName="Facial Hair"></div>
-            <div @click="setCurrentTrait" class="traitSelector pointer" id="facewearSelector" data-trait="facewear" data-traitName="Face Wear"></div>
-            <div @click="setCurrentTrait" class="traitSelector pointer" id="headwearSelector" data-trait="headwear" data-traitName="Head Wear"></div>
+            <div @click="setCurrentTrait" class="traitSelector pointer" id="facewearSelector" data-trait="facewear" data-traitName="Facewear"></div>
+            <div v-if="headwearSelector" @click="setCurrentTrait" class="traitSelector pointer" id="headwearSelector" data-trait="headwear" data-traitName="Headwear"></div>
+            <div v-else="headwearSelector" class="traitSelector traitSelectorDisabled" id="headwearSelector" ></div>
+            
             <div @click="setCurrentTrait" class="traitSelector pointer" id="cigarpipeSelector" data-trait="cigarpipe" data-traitName="Cigar / Pipe"></div>
-            <div @mouseenter="checkTraitToRemove('enter')" @click="removeTrait" class="traitSelector pointer" id="removeTrait" > </div>
-            <div @mouseleave="checkTraitToRemove('leave')" class="traitSelector pointer" id="removeTraitBlocker" style="display:none"> You need a Bear!</div>
+            <div @mouseenter="checkTraitToRemove('enter')" @click="removeTrait(this.currentTrait)" class="traitSelector pointer" id="removeTrait" > </div>
+            <div @mouseleave="checkTraitToRemove('leave')" class="traitSelector pointer" id="removeTraitBlocker" style="display:none"> {{ removeTraitBlockerText }}</div>
           </div>
 
         </div>
@@ -53,6 +55,9 @@
             </div>
             <canvas style="display: none;" :width="canvasWidth" :height="canvasHeight" class="bearCanvas" ref="bearCanvas" ></canvas>
           </div>
+          <div class="currentTraitDescription flex items-center justify-center text-[2rem] tracking-wide font-bold">
+            <p>{{ currentTraitDescription }}</p>
+          </div>
         </div>
 
         <div>
@@ -70,15 +75,18 @@
 
 <script>
 import allImagesSVG from '../../assets/allConvertedSVG';
+import allTraits from '../../assets/traits'
 
 export default {
   data() {
     return {
+      currentTraitDescription: 'Brown Bear',
+      removeTraitBlockerText: '',
       newUpdate: '',
       backgroundCanvas : '',
       speciesCanvas : '',
       faceCanvas : '',
-      headwearunderCanvas: '',
+      headwearUnderCanvas: '',
       clothesCanvas : '',
       facialhairCanvas : '',
       facewearCanvas: '',
@@ -86,13 +94,14 @@ export default {
       screenfacesCanvas: '',
       cigarpipeCanvas: '',
       canvasContext: null,
-      canvasWidth: 400,
-      canvasHeight: 400,
+      canvasWidth: 4500,
+      canvasHeight: 4500,
       date: new Date(),
       allImagesSVG: allImagesSVG,
-      traits: allImagesSVG.allImagesSVG.traits,
-      headwearUnder: allImagesSVG.allImagesSVG.headwearUnder,
+      headwearUnder: allTraits['traits']['headwearUnder'],
+      traits: allTraits['traits'],
       notebookHead: false,
+      headwearSelector: true,
       currentTrait: 'species',
       currentTraitName: 'Species',
       currentIndex: {
@@ -113,18 +122,23 @@ export default {
       if (targetElement){
         targetElement.classList.remove('highlightedSelector');
       }
-
       event.target.classList.add('highlightedSelector');
       this.currentTrait = event.target.getAttribute('data-trait');
       this.currentTraitName = event.target.getAttribute('data-traitName');
     },
     prevColor() {
-       if (this.notebookHead && this.currentTrait === 'face'){
-         this.traits = allImagesSVG.allImagesSVG.faceScreens
-       }else{
-         this.traits = allImagesSVG.allImagesSVG.traits
-       }
-      const currentIndex = this.currentIndex[this.currentTrait];
+      if (this.notebookHead && this.currentTrait === 'face'){
+          const optionalFaceTraits = allTraits['optionalTraits']['face'];
+          const index2FaceTraits = allTraits['traits']['face'];
+          for (const key in optionalFaceTraits) {
+            index2FaceTraits[key] = optionalFaceTraits[key];
+          }
+          this.traits['face'] = index2FaceTraits;
+      }
+      if (!this.notebookHead && this.currentTrait === 'face'){
+        this.traits = allTraits['traits'];
+      }
+      const currentIndex = parseInt(this.currentIndex[this.currentTrait]);
       const traitLength = Object.keys(this.traits[this.currentTrait]).length;
       if (currentIndex > 1) {
         this.currentIndex[this.currentTrait] = String(parseInt(currentIndex) - 1);
@@ -135,86 +149,134 @@ export default {
     },
     nextColor() {
       if (this.notebookHead && this.currentTrait === 'face'){
-         this.traits = allImagesSVG.allImagesSVG.faceScreens
-       }else{
-         this.traits = allImagesSVG.allImagesSVG.traits
-       }
-      const currentIndex = this.currentIndex[this.currentTrait];
+          const optionalFaceTraits = allTraits['optionalTraits']['face'];
+          const index2FaceTraits = allTraits['traits']['face'];
+          for (const key in optionalFaceTraits) {
+            index2FaceTraits[key] = optionalFaceTraits[key];
+          }
+          this.traits['face'] = index2FaceTraits;
+      }
+      if (!this.notebookHead && this.currentTrait === 'face'){
+        this.traits = allTraits['traits'];
+      }
+      const currentIndex = parseInt(this.currentIndex[this.currentTrait]);
       const traitLength = Object.keys(this.traits[this.currentTrait]).length;
-
       if (currentIndex < traitLength) {
         this.currentIndex[this.currentTrait] = String(parseInt(currentIndex) + 1);
       } else {
-        this.currentIndex[this.currentTrait] = "1"
+        this.currentIndex[this.currentTrait] = "1";
       }
       this.applyTraits();
-     
     },
     applyTraits(){
       this.newUpdate = new Date();
-      const traitCanvas = document.getElementById(this.currentTrait + 'BuilderCanvas');
-      traitCanvas.style.backgroundImage = '';
-      this.headwearunderCanvas.style.backgroundImage = '';
-      
       if(this.currentTrait === 'species'){
-        this.setBackgroundTrait()
+        this.applySingleTrait('background', this.traits['background'][this.currentIndex[this.currentTrait]]['N']); 
+        this.applySingleTrait('species', this.traits['species'][this.currentIndex[this.currentTrait]]['N']); 
+        this.applySingleTrait('face', this.traits['face']['1']['N']+this.traits['species'][this.currentIndex[this.currentTrait]]['D']);            
       }
-      if (this.currentTrait === 'headwear'){
-        if (this.currentIndex[this.currentTrait] > 31){
-          this.notebookHead = true  
-        }
-        if (this.currentIndex[this.currentTrait] < 32){
-          this.screenfacesCanvas.style.backgroundImage = ''
-          this.notebookHead = false
-        }
- 
-            
-        if (this.headwearUnder.includes(this.currentIndex[this.currentTrait])) {
-          this.headwearunderCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
-          this.headwearunderCanvas.style.backgroundSize = 'cover';
-        }
-        if(this.currentIndex[this.currentTrait] == 16 ||
-            this.currentIndex[this.currentTrait] == 17 ||
-            this.currentIndex[this.currentTrait] == 18 ||
-            this.currentIndex[this.currentTrait] == 23){
-              this.headwearunderCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}c.png')`;
-            traitCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
-            traitCanvas.style.backgroundSize = 'cover';
+      else if (this.currentTrait === 'clothes'){
+        if (this.currentIndex['clothes'] == 49){
+          this.disableTrait('headwearSelector')
+          this.removeTrait('headwear')
         }else{
-          traitCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
-          traitCanvas.style.backgroundSize = 'cover';
-        }  
-      }
-      if (this.currentTrait === 'face' && this.notebookHead && this.currentIndex[this.currentTrait] >= 66 && this.currentIndex[this.currentTrait] <= 68){
-        this.screenfacesCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
-        this.screenfacesCanvas.style.backgroundSize = 'cover';
-      }else{
-        if(!this.notebookHead){
-          this.screenfacesCanvas.style.backgroundImage = ''
+          this.enableTrait('headwearSelector');
         }
+        this.applySingleTrait('clothes', this.traits['clothes'][this.currentIndex[this.currentTrait]]['N']);
+      }
 
-        traitCanvas.style.backgroundImage = `url('images/traits/${this.currentTrait}/${this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]}.png')`;
-        traitCanvas.style.backgroundSize = 'cover';
-      } 
-    },
-    removeTrait() {
-      if (this.currentTrait !== 'species'){
-        if(this.currentTrait === 'headwear'){
-          this.headwearunderCanvas.style.backgroundImage = ''
-        }
-       
-        const traitCanvas = document.getElementById(this.currentTrait + 'BuilderCanvas');
-        traitCanvas.style.backgroundImage = '';
+
+      //##################################
+      ////////////////////////////////////
+      /////////// HEADWEAR AND UNDER-HEADWER
+      else if (this.currentTrait === 'headwear'){
+          if (this.currentIndex[this.currentTrait] > 31){
+            this.notebookHead = true  
+          }
+          if (this.currentIndex[this.currentTrait] < 32){
+            this.removeTrait('screenfaces');
+            this.notebookHead = false
+          }
+          if(this.currentIndex[this.currentTrait] == 16 ||
+              this.currentIndex[this.currentTrait] == 17 ||
+              this.currentIndex[this.currentTrait] == 18 ||
+              this.currentIndex[this.currentTrait] == 23){
+              this.applySingleTrait('headwearUnder',this.currentIndex[this.currentTrait]+'c');
+              this.applySingleTrait('headwear', this.traits['headwear'][this.currentIndex[this.currentTrait]]['N']);         
+          }else{
+            this.removeTrait('headwearUnder');
+          } 
+          this.applySingleTrait('headwear', this.traits['headwear'][this.currentIndex[this.currentTrait]]['N']); 
       }
+    //##################################
+      ////////////////////////////////////
+      /////////// FACES AND SCREENS FACES
+      else if (this.currentTrait === 'face'){
+        if (this.notebookHead && this.currentIndex[this.currentTrait] >= 14 && this.currentIndex[this.currentTrait] <= 16){
+          this.removeTrait('face');
+          this.applySingleTrait('screenfaces', this.traits['face'][this.currentIndex[this.currentTrait]]['N']);
+        }else{
+          this.removeTrait('screenfaces');
+          this.applySingleTrait('face', this.traits['face'][this.currentIndex[this.currentTrait]]['N']+this.traits['species'][this.currentIndex['species']]['D']);
+        }
+      }else{
+        // if(!this.notebookHead){
+        //   this.removeTrait('screenfaces');
+        // }
+        
+        this.applySingleTrait(this.currentTrait, this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]['N'] );
+      } 
+      this.currentTraitDescription = this.traits[this.currentTrait][this.currentIndex[this.currentTrait]]['name']
+    },
+    applySingleTrait(trait, N){
+      const traitCanvas = document.getElementById(trait + 'BuilderCanvas');
+      if(trait === 'screenfaces'){
+        trait = 'face'
+      }
+      if(trait === 'headwearUnder'){
+        trait = 'headwear'
+      }
+      traitCanvas.style.backgroundImage = `url('images/traits/${trait}/${N}.png'`;
+
+    },
+    removeTrait(traitToRemove) {
+
+      if (traitToRemove !== 'species' && traitToRemove !== 'clothes' && traitToRemove !== 'face' ){
+        if(traitToRemove === 'headwear'){
+          this.headwearCanvas.style.backgroundImage = ''
+          this.headwearUnderCanvas.style.backgroundImage = ''
+          this.screenfacesCanvas.style.backgroundImage = ''
+      }
+    }
+    traitToRemove = traitToRemove + 'Canvas';
+    console.log(traitToRemove);
+    this[traitToRemove].style.backgroundImage = '';
       this.newUpdate = new Date();
     }, 
     checkTraitToRemove(arg){
-      if (arg === 'enter' && this.currentTrait === 'species'){
+      if (arg === 'enter'){
+        if (this.currentTrait === 'species' || this.currentTrait === 'face' || this.currentTrait === 'clothes') {
         const removeTrait = document.getElementById('removeTrait')
         const removeTraitBlocker = document.getElementById('removeTraitBlocker')
         removeTrait.style.display = 'none'
         removeTraitBlocker.style.display = 'flex'
+        switch (this.currentTrait)
+          {
+            case 'species':
+            this.removeTraitBlockerText = 'You need a Bear!'
+              break;
+            case 'face':
+            this.removeTraitBlockerText = 'You need a face!'
+              break;
+            case 'clothes':
+            this.removeTraitBlockerText = 'You need clothes!'
+              break;
+            default:
+            this.removeTraitBlockerText = 'You need this!'
+          }
       }
+
+    } 
       if (arg === 'leave'){
         const removeTrait = document.getElementById('removeTrait')
         const removeTraitBlocker = document.getElementById('removeTraitBlocker')
@@ -275,7 +337,13 @@ export default {
       link.href = canvas.toDataURL("image/png");
       link.download = "YourBearMF.png";
       link.click();
-    }
+    },
+    disableTrait(trait) {
+      this[trait] = false
+    },
+    enableTrait(trait) {
+      this[trait] = true
+    },
   },
   watch:{
     newUpdate(){
@@ -287,7 +355,7 @@ export default {
     this.backgroundCanvas = document.getElementById("backgroundBuilderCanvas");
     this.speciesCanvas = document.getElementById("speciesBuilderCanvas");
     this.faceCanvas = document.getElementById("faceBuilderCanvas");
-    this.headwearunderCanvas = document.getElementById("headwearUnderBuilderCanvas");
+    this.headwearUnderCanvas = document.getElementById("headwearUnderBuilderCanvas");
     this.clothesCanvas = document.getElementById("clothesBuilderCanvas");
     this.facialhairCanvas = document.getElementById("facialhairBuilderCanvas");
     this.facewearCanvas = document.getElementById("facewearBuilderCanvas");
@@ -306,6 +374,9 @@ export default {
 
 
 <style scoped>
+.currentTraitDescription{
+  padding-top: 15px;
+}
 .itsTrait{
   background-size: cover;
   background-position: center;
@@ -318,6 +389,16 @@ export default {
 
 #speciesBuilderCanvas{
   background-image: url(/images/traits/species/01.png);
+  background-position: center;
+  background-size: cover;
+}
+#faceBuilderCanvas{
+  background-image: url(/images/traits/face/01brown.png);
+  background-position: center;
+  background-size: cover;
+}
+#clothesBuilderCanvas{
+  background-image: url(/images/traits/clothes/01.png);
   background-position: center;
   background-size: cover;
 }
@@ -335,6 +416,7 @@ body{
 .builderPreview{
   width: 300px;
   height: 300px;
+  padding-top: 25px;
 }
 #bearBuilder{
   width: 300px;
@@ -361,7 +443,7 @@ body{
   background-color: #0CC0DF;
 }
 #speciesSelector{
-    background-image: url(/images/traits/species/02.png);
+    background-image: url(/images/traits/species/01.png);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
@@ -370,7 +452,7 @@ body{
 }
 
 #faceSelector{
-  background-image: url(/images/traits/face/01.png);
+  background-image: url(/images/traits/face/01brown.png);
     background-position: center;
     background-position-y: -7px;
     background-position-x: 3px;
@@ -537,5 +619,12 @@ border-radius:15px 225px 15px 255px/255px 15px 225px 15px;
   justify-content: center;
   align-items: center;
 
+}
+.traitSelectorDisabled{
+  opacity: 0.3;
+}
+.traitSelectorDisabled:hover{
+  background-color: #e4e4e4 !important;
+  cursor: not-allowed;
 }
 </style>

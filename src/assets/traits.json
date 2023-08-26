@@ -1,0 +1,573 @@
+{
+        "optionalTraits":{
+                "face":{
+                    "14": {
+                        "N": "66",
+                        "name": "rocket.exe"
+                    }, 
+                    "15": {
+                        "N": "67",
+                        "name": "Boot Screen"
+                    }, 
+                    "16": {
+                        "N": "68",
+                        "name": "Ping Pong Game"
+                    }
+                }
+            },
+            "traits":{
+                "background": {
+                    "1": {
+                        "N": "01"
+                    },
+                    "2": {
+                        "N": "02"
+                    },
+                    "3": {
+                        "N": "03"
+                    },
+                    "4": {
+                        "N": "04"
+                    },
+                    "5": {
+                        "N": "05"
+                    }
+                },
+                "species": {
+                    "1": {
+                        "N": "01",
+                        "name": "Brown Bear",
+                        "D":"brown"
+                    },
+                    "2": {
+                        "N": "02",
+                        "name": "Black Bear",
+                        "D":"brown"
+                    },
+                    "3": {
+                        "N": "03",
+                        "name": "Koala Bear",
+                        "D":"koala"
+                    },
+                    "4": {
+                        "N": "04",
+                        "name": "Polar Bear",
+                        "D":"polar"
+                    },
+                    "5": {
+                        "N": "05",
+                        "name": "Panda Bear",
+                        "D":"panda"
+                    }
+                },
+                "face": {
+                    "1": {
+                        "N": "01",
+                        "name": "Stoke"
+                    },
+                    "2": {
+                        "N": "02",
+                        "name": "Simple"
+                    },
+                    "3": {
+                        "N": "03",
+                        "name": "Stunned"
+                    },
+                    "4": {
+                        "N": "04",
+                        "name": "Captivated"
+                    },
+                    "5": {
+                        "N": "05",
+                        "name": "Tongue"
+                    },
+                    "6": {
+                        "N": "06",
+                        "name": "Angry"
+                    },
+                    "7": {
+                        "N": "07",
+                        "name": "Derp"
+                    },
+                    "8": {
+                        "N": "08",
+                        "name": "Smirk"
+                    },
+                    "9": {
+                        "N": "09",
+                        "name": "Silly"
+                    },
+                    "10": {
+                        "N": "10",
+                        "name": "Magnum"
+                    },
+                    "11": {
+                        "N": "11",
+                        "name": "Rage"
+                    },
+                    "12": {
+                        "N": "12",
+                        "name": "Confused"
+                    },
+                    "13": {
+                        "N": "13",
+                        "name": "Happy"
+                    }
+                },
+                "clothes": {
+                    "1": {
+                        "N": "01",
+                        "name": "Chain"
+                    },
+                    "2": {
+                        "N": "02",
+                        "name": "Red Shirt"
+                    },
+                    "3": {
+                        "N": "03",
+                        "name": "Yellow Shirt"
+                    },
+                    "4": {
+                        "N": "04",
+                        "name": "Green Shirt"
+                    },
+                    "5": {
+                        "N": "05",
+                        "name": "Hawaiian Print Shirt"
+                    },
+                    "6": {
+                        "N": "06",
+                        "name": "Hawaiian Print Shirt with Chain"
+                    },
+                    "7": {
+                        "N": "07",
+                        "name": "Red Zip Up Hoodie"
+                    },
+                    "8": {
+                        "N": "08",
+                        "name": "Pink Zip Up Hoodie"
+                    },
+                    "9": {
+                        "N": "09",
+                        "name": "Green Zip Up Hoodie"
+                    },
+                    "10": {
+                        "N": "10",
+                        "name": "Blue Zip Up Hoodie"
+                    },
+                    "11": {
+                        "N": "11",
+                        "name": "Simple Tank Top"
+                    },
+                    "12": {
+                        "N": "12",
+                        "name": "Red Striped Tank Top"
+                    },
+                    "13": {
+                        "N": "13",
+                        "name": "Blue Striped Tank Top"
+                    },
+                    "14": {
+                        "N": "14",
+                        "name": "Green Striped Tank Top"
+                    },
+                    "15": {
+                        "N": "15",
+                        "name": "Red Jersey"
+                    },
+                    "16": {
+                        "N": "16",
+                        "name": "Teal Jersey"
+                    },
+                    "17": {
+                        "N": "17",
+                        "name": "Purple Jersey"
+                    },
+                    "18": {
+                        "N": "18",
+                        "name": "Red Turtleneck Sweater"
+                    },
+                    "19": {
+                        "N": "19",
+                        "name": "Pink Turtleneck Sweater"
+                    },
+                    "20": {
+                        "N": "20",
+                        "name": "Blue Turtleneck Sweater"
+                    },
+                    "21": {
+                        "N": "21",
+                        "name": "Green Turtleneck Sweater"
+                    },
+                    "22": {
+                        "N": "22",
+                        "name": "Red Baseball T-shirt"
+                    },
+                    "23": {
+                        "N": "23",
+                        "name": "Blue Baseball T-shirt"
+                    },
+                    "24": {
+                        "N": "24",
+                        "name": "Red Scarf"
+                    },
+                    "25": {
+                        "N": "25",
+                        "name": "Blue Scarf"
+                    },
+                    "26": {
+                        "N": "26",
+                        "name": "Red Bandana"
+                    },
+                    "27": {
+                        "N": "27",
+                        "name": "Blue Bandana"
+                    },
+                    "28": {
+                        "N": "28",
+                        "name": "Chef's Coat"
+                    },
+                    "29": {
+                        "N": "29",
+                        "name": "Pirate Shirt"
+                    },
+                    "30": {
+                        "N": "30",
+                        "name": "King's Coat"
+                    },
+                    "31": {
+                        "N": "31",
+                        "name": "Gi"
+                    },
+                    "32": {
+                        "N": "32",
+                        "name": "Suit"
+                    },
+                    "33": {
+                        "N": "33",
+                        "name": "Suit with Chain"
+                    },
+                    "34": {
+                        "N": "34",
+                        "name": "Blue Suit"
+                    },
+                    "35": {
+                        "N": "35",
+                        "name": "Tactical Jacket"
+                    },
+                    "36": {
+                        "N": "36",
+                        "name": "Tactical Jacket with Chain"
+                    },
+                    "37": {
+                        "N": "37",
+                        "name": "Merry Men Garb"
+                    },
+                    "38": {
+                        "N": "38",
+                        "name": "Steampunk Gear"
+                    },
+                    "39": {
+                        "N": "39",
+                        "name": "Western Vest"
+                    },
+                    "40": {
+                        "N": "40",
+                        "name": "Poncho"
+                    },
+                    "41": {
+                        "N": "41",
+                        "name": "Captain's Uniform"
+                    },
+                    "42": {
+                        "N": "42",
+                        "name": "Wizard's Robe"
+                    },
+                    "43": {
+                        "N": "43",
+                        "name": "Wizard's Robe with Chain"
+                    },
+                    "44": {
+                        "N": "44",
+                        "name": "Black Penguin Costume"
+                    },
+                    "45": {
+                        "N": "45",
+                        "name": "Pink Penguin Costume"
+                    },
+                    "46": {
+                        "N": "46",
+                        "name": "Shiba Costume"
+                    },
+                    "47": {
+                        "N": "47",
+                        "name": "Cat Costume"
+                    },
+                    "48": {
+                        "N": "48",
+                        "name": "Monke Costume"
+                    },
+                    "49": {
+                        "N": "49",
+                        "name": "Banana Suit"
+                    }
+                },
+                "facialhair": {
+                    "1": {
+                        "N": "01",
+                        "name": "Brown Handlebar Mustache"
+                    },
+                    "2": {
+                        "N": "02",
+                        "name": "Blonde Handlebar Mustache"
+                    },
+                    "3": {
+                        "N": "03",
+                        "name": "Brown Mustache"
+                    },
+                    "4": {
+                        "N": "04",
+                        "name": "Blonde Mustache"
+                    },
+                    "5": {
+                        "N": "05",
+                        "name": "Brown Hipster Mustache"
+                    },
+                    "6": {
+                        "N": "06",
+                        "name": "Blonde Hipster Mustache"
+                    },
+                    "7": {
+                        "N": "07",
+                        "name": "Brown Beard"
+                    },
+                    "8": {
+                        "N": "08",
+                        "name": "Blonde Beard"
+                    },
+                    "9": {
+                        "N": "09",
+                        "name": "Big Brown Beard"
+                    },
+                    "10": {
+                        "N": "10",
+                        "name": "Wizard's Beard"
+                    }
+                },
+                "facewear": {
+                    "1": {
+                        "N": "01",
+                        "name": "Beige Tinted Shades"
+                    },
+                    "2": {
+                        "N": "02",
+                        "name": "Red Tinted Shades"
+                    },
+                    "3": {
+                        "N": "03",
+                        "name": "Purple Tinted Shades"
+                    },
+                    "4": {
+                        "N": "04",
+                        "name": "Orange Tinted Shades"
+                    },
+                    "5": {
+                        "N": "05",
+                        "name": "Pilot Shades"
+                    },
+                    "6": {
+                        "N": "06",
+                        "name": "Red Glasses"
+                    },
+                    "7": {
+                        "N": "07",
+                        "name": "Green Glasses"
+                    },
+                    "8": {
+                        "N": "08",
+                        "name": "Blues Shades"
+                    },
+                    "9": {
+                        "N": "09",
+                        "name": "Purple Scanner"
+                    },
+                    "10": {
+                        "N": "10",
+                        "name": "Green Scanner"
+                    },
+                    "11": {
+                        "N": "11",
+                        "name": "Night Vision Goggles"
+                    },
+                    "12": {
+                        "N": "12",
+                        "name": "Steampunk Goggles"
+                    },
+                    "13": {
+                        "N": "13",
+                        "name": "Retro Shades"
+                    }
+                },
+                "headwear": {
+                    "1": {
+                        "N": "01",
+                        "name": "Red Beanie"
+                    },
+                    "2": {
+                        "N": "02",
+                        "name": "Blue Beanie"
+                    },
+                    "3": {
+                        "N": "03",
+                        "name": "Tactical Beanie"
+                    },
+                    "4": {
+                        "N": "04",
+                        "name": "Blue Headband"
+                    },
+                    "5": {
+                        "N": "05",
+                        "name": "Red Headband"
+                    },
+                    "6": {
+                        "N": "06",
+                        "name": "Chef's Hat"
+                    },
+                    "7": {
+                        "N": "07",
+                        "name": "Pirate Hat"
+                    },
+                    "8": {
+                        "N": "08",
+                        "name": "Crown"
+                    },
+                    "9": {
+                        "N": "09",
+                        "name": "Blonde Mullet"
+                    },
+                    "10": {
+                        "N": "10",
+                        "name": "Brown Mullet"
+                    },
+                    "11": {
+                        "N": "11",
+                        "name": "Punk Mohawk"
+                    },
+                    "12": {
+                        "N": "12",
+                        "name": "High Energy Hair"
+                    },
+                    "13": {
+                        "N": "13",
+                        "name": "Blue Flower"
+                    },
+                    "14": {
+                        "N": "14",
+                        "name": "Purple Flower"
+                    },
+                    "15": {
+                        "N": "15",
+                        "name": "Bow"
+                    },
+                    "16": {
+                        "N": "16",
+                        "name": "Purple Trucker Hat"
+                    },
+                    "17": {
+                        "N": "17",
+                        "name": "Green Trucker Hat"
+                    },
+                    "18": {
+                        "N": "18",
+                        "name": "White Trucker Hat"
+                    },
+                    "19": {
+                        "N": "19",
+                        "name": "Poker Visor"
+                    },
+                    "20": {
+                        "N": "20",
+                        "name": "Blues Hat"
+                    },
+                    "21": {
+                        "N": "21",
+                        "name": "Rocker's Tophat"
+                    },
+                    "22": {
+                        "N": "22",
+                        "name": "Merry Men Hat"
+                    },
+                    "23": {
+                        "N": "23",
+                        "name": "Cowboy Hat"
+                    },
+                    "24": {
+                        "N": "24",
+                        "name": "Sombrero"
+                    },
+                    "25": {
+                        "N": "25",
+                        "name": "Captain's Hat"
+                    },
+                    "26": {
+                        "N": "26",
+                        "name": "Wizard's Hat"
+                    },
+                    "27": {
+                        "N": "27",
+                        "name": "Black Penguin Hood"
+                    },
+                    "28": {
+                        "N": "28",
+                        "name": "Pink Penguin Hood"
+                    },
+                    "29": {
+                        "N": "29",
+                        "name": "Shiba Hood"
+                    },
+                    "30": {
+                        "N": "30",
+                        "name": "Cat Hood"
+                    },
+                    "31": {
+                        "N": "31",
+                        "name": "Monke Hood"
+                    },
+                    "32": {
+                        "N": "32",
+                        "name": "Blueberry Notebook"
+                    },
+                    "33": {
+                        "N": "33",
+                        "name": "Key Lime Notebook"
+                    },
+                    "34": {
+                        "N": "34",
+                        "name": "Tangerine Notebook"
+                    }
+                },
+                "headwearUnder":[
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11"  
+                ],
+                "cigarpipe": {
+                    "1": {
+                        "N": "01",
+                        "name": "Cigar"
+                    },
+                    "2": {
+                        "N": "02",
+                        "name": "Wizard's Pipe"
+                    }
+                }
+            }
+        }
