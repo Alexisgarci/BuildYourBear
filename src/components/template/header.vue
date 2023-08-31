@@ -1,5 +1,5 @@
 <template>
-     <div class="flex items-center justify-center">
+     <div class=" flex items-center justify-center">
       <div class="menuIcon bearsHomeLogo hover:cursor-pointer">
         <a href="https://www.bearsdeluxe.io/" target="_blank"> <img src="/images/logoB.png"></a>
       </div>
@@ -58,13 +58,14 @@ export default {
 }
 .menuIcon{
 position: relative;
-top: 70px;
+top: 80px;
 }
 .bearsHomeLogo{
   position: relative;
   width: 60px;
   height: 60px;
-  top: 85px;
+  top: 90px;
   margin-right: 5px;
 }
+
 </style>
