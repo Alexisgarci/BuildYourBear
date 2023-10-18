@@ -49,7 +49,6 @@
         <div class="builderBearContainer"> 
           <div class="builderPreview">
             <div class="relative" id="bearBuilder">
-              <div class="absolute left-0 w-full h-full  itsTrait" id="backgroundBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="speciesBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="faceBuilderCanvas"></div>
               <div class="absolute left-0 w-full h-full  itsTrait" id="headwearUnderBuilderCanvas"></div>
@@ -88,7 +87,6 @@ export default {
       currentTraitDescription: 'Brown Bear',
       removeTraitBlockerText: '',
       newUpdate: '',
-      backgroundCanvas : '',
       speciesCanvas : '',
       faceCanvas : '',
       headwearUnderCanvas: '',
@@ -113,7 +111,6 @@ export default {
       currentTrait: 'species',
       currentTraitName: 'Species',
       currentIndex: {
-        background: "1",
         species: "1",
         face: "1",
         facialhair: "1",
@@ -206,7 +203,6 @@ export default {
       ////////////////////////////////////
       /////////// SPECIES
       if(this.currentTrait === 'species'){
-        this.applySingleTrait('background', this.traits['background'][this.currentIndex[this.currentTrait]]['N']); 
         this.applySingleTrait('species', this.traits['species'][this.currentIndex[this.currentTrait]]['N']); 
         this.applySingleTrait('face', this.traits['face']['1']['N']+this.traits['species'][this.currentIndex[this.currentTrait]]['D']);            
       }
@@ -229,6 +225,7 @@ export default {
       /////////// HEADWEAR AND UNDER-HEADWER
       else if (this.currentTrait === 'headwear'){
         this.removeTrait('headwearUnder');
+        this.removeTrait('headwear');
           if (this.currentIndex[this.currentTrait] > 31){
             this.notebookHead = true  
             this.disableTrait('cigarpipeSelector')
@@ -344,32 +341,6 @@ export default {
       }
     
     },
-    setBackgroundTrait(){
-      let backgroundTrait = null;
-      switch (this.currentIndex[this.currentTrait])
-      {
-        case '1':
-        backgroundTrait = '02.png'
-          break;
-        case '2':
-        backgroundTrait = '01.png'
-          break;
-        case '3':
-        backgroundTrait = '03.png'
-          break;
-        case '4':
-        backgroundTrait = '04.png'
-          break;
-        case '5':
-        backgroundTrait = '05.png'
-          break;
-        default:
-        backgroundTrait = '01.png'
-      }
-      const traitCanvas = document.getElementById('backgroundBuilderCanvas');
-      traitCanvas.style.backgroundImage = `url('images/traits/background/${backgroundTrait}')`;
-      traitCanvas.style.backgroundSize = 'cover';
-    },
     drawImagesToCanvas() {
       const canvas = this.$refs.bearCanvas;
       const ctx = canvas.getContext("2d");
@@ -410,8 +381,6 @@ export default {
     }
   },
   mounted() {
-
-    this.backgroundCanvas = document.getElementById("backgroundBuilderCanvas");
     this.speciesCanvas = document.getElementById("speciesBuilderCanvas");
     this.faceCanvas = document.getElementById("faceBuilderCanvas");
     this.headwearUnderCanvas = document.getElementById("headwearUnderBuilderCanvas");
@@ -440,12 +409,6 @@ export default {
   background-size: cover;
   background-position: center;
 }
-#backgroundBuilderCanvas{
-  background-image: url("/images/traits/background/02.png");
-  background-position: center;
-  background-size: cover;
-}
-
 #speciesBuilderCanvas{
   background-image: url(/images/traits/species/01.png);
   background-position: center;
@@ -693,7 +656,7 @@ border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   cursor: not-allowed;
 }
 .currentTraitDescription {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   position: relative;
   top: 10px;
 }
