@@ -469,7 +469,7 @@ body{
   background-color: #0CC0DF;
 }
 #speciesSelector{
-    background-image: url(/images/traits/species/01.png);
+    background-image: url(/images/traits/species/bear.png);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
